@@ -16,6 +16,8 @@ function handleImageClick(e) {
     modal.show();
   }
   window.addEventListener("keydown", handleEscBtnClick);
+  const modalRef = document.querySelector(".basicLightbox");
+  modalRef.addEventListener("click", handleModalBackdropClick);
 }
 
 function handleEscBtnClick(e) {
@@ -23,6 +25,10 @@ function handleEscBtnClick(e) {
     modal.close();
     window.removeEventListener("keydown", handleEscBtnClick);
   }
+}
+
+function handleModalBackdropClick() {
+  window.removeEventListener("keydown", handleEscBtnClick);
 }
 
 const galleryList = galleryItems
